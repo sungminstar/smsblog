@@ -96,6 +96,9 @@ const RightComponent = (props) => {
                     <card3>
                         <h3> card3 </h3>
                     </card3>
+                    <card4>
+                        <h3> card4 </h3>
+                    </card4>
                 </Card>
             </CardContainer>
         </>
