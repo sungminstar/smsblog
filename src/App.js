@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Fixedcard from "./fixedcard";
+import Card from "./card";
 
 const App = (props) => {
     return (
@@ -13,16 +15,18 @@ const LeftComponent = (props) => {
     return (
         <>
         <LeftContainer>
-            <TitleContainer>
-                <BigTitle> Sungmin's </BigTitle>
-                <SmallTitle> Blog </SmallTitle>           
-                <SNSContainter>
-                    <sns1>a</sns1>
-                    <sns2>b</sns2>
-                    <sns3>c</sns3>
-                    <sns4>d</sns4>
-                </SNSContainter>
-            </TitleContainer>
+            <Container>
+                <TitleContainer>
+                    <p>Sungmin's</p>
+                    <p>Blog</p>
+                </TitleContainer>
+                <SNSContainer>
+                    <SnsItems></SnsItems>
+                    <SnsItems></SnsItems>
+                    <SnsItems></SnsItems>
+                    <SnsItems></SnsItems>
+                </SNSContainer>
+            </Container>
         </LeftContainer>
         </>
     );
@@ -30,109 +34,78 @@ const LeftComponent = (props) => {
 }
 
 const LeftContainer = styled.div`
-    width: 250px;
+    width: 30%;
+    height: 100%;
+
+    background-color: #0078FF;
+    position: fixed;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    height: 40%;
+
+
     display: flex;
     flex-direction: column;
-    // 메인축 세로 설정 
+    align-items: flex-end;
+    
 `;
 
-const TitleContainer = styled.p`
-    height: 100px;
-    margin: 0px 30px;
+const TitleContainer = styled.div`
+    width: 70%;
+    height: 50%;
+    //border-bottom: 1px solid white;
+    margin-top: 570px;
+    font-size: 30px;
+    
 `;
 
-const BigTitle = styled.p`
-    color: rgb(0, 0, 0);
-    font-size: 35px;
-    margin: 600px 0px 0px 0px
-`;
-
-const SmallTitle = styled.p`
-	color: rgb(0, 0, 0);
-	font-size: 35px;
-    margin: 0px 0px;
-`;
-
-const SNSContainter = styled.p`
-    fond-size: 20px;
-    padding: 10px;
+const SNSContainer = styled.div`
+    width: 100%;
+    height: 10%;
     
     display: flex;
     flex-direction: row;
+    border-top: 1px solid white;
     justify-content: space-between;
-   
 `;
+
+const SnsItems = styled.div`
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+`;
+/*
+const box = styled.div`
+    width: 10px;
+    height: 10px;
+    border: 1x solid white;
+    background-color: white;
+    
+`;*/
 
 
 const RightComponent = (props) => {
     return (
         <>
-            <CardContainer>
-                <FixedCard>
-                    <Right>
-                        <card1>
-                            <h1> card1 </h1>
-                        </card1>
-                        <card2>
-                            <h1> card2 </h1>
-                        </card2>
-                    </Right>
-                    <Left>
-                        <card3>
-                            <h1> card3 </h1>
-                        </card3>
-                        <card4>
-                            <h1> card4 </h1>
-                        </card4>
-                    </Left>
-                </FixedCard>
-                <Card>
-                    <card1>
-                        <h3> card1 </h3>
-                    </card1>
-                    <card2>
-                        <h3> card2 </h3>
-                    </card2>
-                    <card3>
-                        <h3> card3 </h3>
-                    </card3>
-                    <card4>
-                        <h3> card4 </h3>
-                    </card4>
-                </Card>
-            </CardContainer>
+        <RightContainer>
+            <Fixedcard></Fixedcard>
+            <Card></Card>
+        </RightContainer>
         </>
     );
+  
 }
 
-const CardContainer = styled.div`
-    margin: 50px 100px;
-    
- 
-`;
+const RightContainer = styled.div`
+    width: 100vw;
+    height: 100vh;
 
-const FixedCard = styled.p`
-    display: flex;
-    flex-direction:  row;
-    justify-content: space-between;
+    margin-left: 30%;
 
-`;
-
-const Right = styled.p`
-    margin: 0px 300px;
-`;
-
-const Left = styled.p`
-    margin: 0px 0px 0px 0px;
-`;
-
-const Card = styled.p`
-    size: 50px;
-    width: 500px;
-    margin: 10px 300px;
-    display: flex;
-    flex-dirction: row;
-    justify-content: space-between;
+    background-color: purple;
 `;
 
 export default App;
